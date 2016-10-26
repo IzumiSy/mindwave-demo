@@ -1,8 +1,9 @@
 var Colors = require("colors");
 var BlessContrib = require("blessed-contrib");
 var BlessedScreen = require("blessed").screen();
-var Mindwave = (new require("mindwave"))();
+var Mindwave = require("mindwave");
 
+const mw = new Mindwave();
 const GRAPH_MAX_DATA = 100;
 
 /*
@@ -114,13 +115,13 @@ const setGraphData = function(graphInstance, graphData, data) {
  * Mindwave events
  */
 
-Mindwave.on("meditation", function(data) {
+mw.on("meditation", function(data) {
   dataLog.log("Meditation: " + data);
   setGraphData(meditationLine, meditationData, data);
   BlessedScreen.render();
 });
 
-Mindwave.on("eeg", function(data) {
+mw.on("eeg", function(data) {
   thetaValue = (data["theta"] / 1000000);
   lowAlphaValue = (data["loAlpha"] / 1000000);
 
@@ -132,19 +133,19 @@ Mindwave.on("eeg", function(data) {
   BlessedScreen.render();
 });
 
-Mindwave.on("connect", function(data) {
+mw.on("connect", function(data) {
   dataLog.log("MindWave connect");
 });
 
-Mindwave.on("disconnect", function(data) {
+mw.on("disconnect", function(data) {
   dataLog.log("MindWave disconnect");
 });
 
-Mindwave.on("error", function(data) {
+mw.on("error", function(data) {
   dataLog.log("error: " + data);
 });
 
-Mindwave.connect("/dev/cu.MindWaveMobile-DevA");
+mw.connect("/dev/cu.MindWaveMobile-DevA");
 
 BlessedScreen.key(["escape", "q", "C-c"], function(ch, key) {
   return process.exit(0);
