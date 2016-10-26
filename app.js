@@ -10,13 +10,21 @@ const GRAPH_MAX_DATA = 100;
  */
 
 const meditationLine = BlessContrib.line({
-  width: 100, height: 14,
-  left: 1, top: 1,
+  width: 100,
+  height: 14,
+  left: 1,
+  top: 1,
   label: "Meditation Graph",
-  style: { line: "green", baseline: "white" }
+  style: {
+    line: "green",
+    baseline: "white"
+  }
 });
-var meditationData = {
-  title: "Meditation", x: [], y: []
+
+const meditationData = {
+  title: "Meditation",
+  x: [],
+  y: []
 };
 
 BlessedScreen.append(meditationLine);
@@ -25,14 +33,23 @@ meditationLine.setData(meditationData);
 /*
  * Theta Graph
  */
+
 const thetaLine = BlessContrib.line({
-  width: 100, height: 14,
-  left: 1, top: 13,
+  width: 100,
+  height: 14,
+  left: 1,
+  top: 13,
   label: "Theta Graph",
-  style: { line: "green", baseline: "white" }
+  style: {
+    line: "green",
+    baseline: "white"
+  }
 });
-var thetaData = {
-  title: "Theta", x: [], y: []
+
+const thetaData = {
+  title: "Theta",
+  x: [],
+  y: []
 };
 
 BlessedScreen.append(thetaLine);
@@ -41,14 +58,23 @@ thetaLine.setData(thetaData);
 /*
  * Low Alpha Graph
  */
+
 const lowAlphaLine = BlessContrib.line({
-  width: 100, height: 14,
-  left: 1, top: 25,
+  width: 100,
+  height: 14,
+  left: 1,
+  top: 25,
   label: "Low Alpha Graph",
-  style: { line: "green", baseline: "white" }
+  style: {
+    line: "green",
+    baseline: "white"
+  }
 });
-var lowAlphaData = {
-  title: "Low Alpha", x: [], y: []
+
+const lowAlphaData = {
+  title: "Low Alpha",
+  x: [],
+  y: []
 };
 
 BlessedScreen.append(lowAlphaLine);
@@ -59,12 +85,15 @@ lowAlphaLine.setData(lowAlphaData);
  */
 
 const dataLog = BlessContrib.log({
-  width: 20, height: 100,
-  left: 100, top: 1,
+  width: 20,
+  height: 100,
+  left: 100,
+  top: 1,
   fg: "green",
   selectedFg: "green",
   label: 'Server Log'
 });
+
 BlessedScreen.append(dataLog);
 
 /*
@@ -114,10 +143,6 @@ Mindwave.on("disconnect", function(data) {
 Mindwave.on("error", function(data) {
   dataLog.log("error: " + data);
 });
-
-/*
- * Run
- */
 
 Mindwave.connect("/dev/cu.MindWaveMobile-DevA");
 
