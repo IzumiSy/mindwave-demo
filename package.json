@@ -1,12 +1,12 @@
 {
   "name": "mindwave-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mindwave demo app",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "",
+  "author": "IzumiSy",
   "license": "ISC",
   "dependencies": {
     "blessed": "^0.1.81",
