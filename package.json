@@ -1,0 +1,17 @@
+{
+  "name": "mindwave-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^3.5.4",
+    "colors": "^1.1.2",
+    "mindwave": "0.0.3"
+  }
+}
