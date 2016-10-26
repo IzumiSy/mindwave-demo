@@ -1,7 +1,7 @@
 var Colors = require("colors");
 var BlessContrib = require("blessed-contrib");
 var BlessedScreen = require("blessed").screen();
-var Mindwave = new require("mindwave")();
+var Mindwave = (new require("mindwave"))();
 
 const GRAPH_MAX_DATA = 100;
 
